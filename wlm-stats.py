@@ -283,19 +283,22 @@ def main():
     resolutions_list.sort(reverse=1)
     resolutions_list = [[k, v] for v, k in resolutions_list]
 
-    width = u'1000px'
-    height = u'250px'
     dates_graph_data = u', '.join([u'["%s", %s]' % (convert2unix(k), v) for k, v in dates_list])
-    dates_graph = u"""<div id="dates_graph" style="width: %s;height: %s;"></div>
+    dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 250px;"></div>"""
+    dates_graph_mini = u"""<div id="dates_graph" style="width: 300px;height: 150px;"></div>"""
+    dates_graph_core = u"""
     <script type="text/javascript">
     $(function () {
         var dates_graph_data_2014 = [%s];
-        var dates_graph_data_2013 = [["1216684800000", 2], ["1219536000000", 1], ["1268179200000", 1], ["1309651200000", 1], ["1321747200000", 1], ["1321833600000", 1], ["1322697600000", 1], ["1336780800000", 1], ["1346630400000", 1], ["1367971200000", 1], ["1369785600000", 1], ["1369872000000", 1], ["1376524800000", 1], ["1377216000000", 3], ["1377388800000", 2], ["1377820800000", 2], ["1377907200000", 409], ["1377993600000", 14345], ["1378080000000", 8265], ["1378166400000", 9208], ["1378252800000", 8663], ["1378339200000", 7886], ["1378425600000", 8220], ["1378512000000", 8453], ["1378598400000", 9373], ["1378684800000", 9606], ["1378771200000", 8279], ["1378857600000", 9629], ["1378944000000", 7791], ["1379030400000", 8388], ["1379116800000", 8160], ["1379203200000", 9568], ["1379289600000", 8790], ["1379376000000", 9468], ["1379462400000", 8790], ["1379548800000", 8381], ["1379635200000", 8992], ["1379721600000", 10009], ["1379808000000", 12367], ["1379894400000", 9869], ["1379980800000", 13156], ["1380067200000", 14209], ["1380153600000", 15964], ["1380240000000", 15085], ["1380326400000", 19514], ["1380412800000", 33069], ["1380499200000", 41951], ["1380585600000", 3711]];;
-        var dates_graph_data_2012 = [["1377907200000", 525], ["1377993600000", 7641], ["1378080000000", 8638], ["1378166400000", 6954], ["1378252800000", 7276], ["1378339200000", 7946], ["1378425600000", 6513], ["1378512000000", 7268], ["1378598400000", 8386], ["1378684800000", 10372], ["1378771200000", 10613], ["1378857600000", 8214], ["1378944000000", 8694], ["1379030400000", 9046], ["1379116800000", 8725], ["1379203200000", 8627], ["1379289600000", 11119], ["1379376000000", 9520], ["1379462400000", 8408], ["1379548800000", 7387], ["1379635200000", 8284], ["1379721600000", 10391], ["1379808000000", 10656], ["1379894400000", 14308], ["1379980800000", 11642], ["1380067200000", 12848], ["1380153600000", 13158], ["1380240000000", 17252], ["1380326400000", 20409], ["1380412800000", 26966], ["1380499200000", 47387], ["1380585600000", 5554]];
-        var dates_graph_data_2011 = [["1377907200000", 222], ["1377993600000", 2373], ["1378080000000", 1560], ["1378166400000", 2211], ["1378252800000", 3473], ["1378339200000", 3333], ["1378425600000", 2968], ["1378512000000", 3050], ["1378598400000", 2850], ["1378684800000", 3146], ["1378771200000", 3546], ["1378857600000", 4306], ["1378944000000", 4069], ["1379030400000", 3755], ["1379116800000", 3378], ["1379203200000", 4762], ["1379289600000", 3596], ["1379376000000", 4648], ["1379462400000", 7038], ["1379548800000", 5095], ["1379635200000", 4185], ["1379721600000", 4669], ["1379808000000", 4390], ["1379894400000", 4807], ["1379980800000", 6123], ["1380067200000", 8159], ["1380153600000", 6691], ["1380240000000", 9158], ["1380326400000", 10408], ["1380412800000", 13188], ["1380499200000", 21971], ["1380585600000", 927]];
+        
+        var dates_graph_data_2013 = [["1409443200000", 409], ["1409529600000", 14345], ["1409616000000", 8265], ["1409702400000", 9208], ["1409788800000", 8663], ["1409875200000", 7886], ["1409961600000", 8220], ["1410048000000", 8453], ["1410134400000", 9373], ["1410220800000", 9606], ["1410307200000", 8279], ["1410393600000", 9629], ["1410480000000", 7791], ["1410566400000", 8388], ["1410652800000", 8160], ["1410739200000", 9568], ["1410825600000", 8790], ["1410912000000", 9468], ["1410998400000", 8790], ["1411084800000", 8381], ["1411171200000", 8992], ["1411257600000", 10009], ["1411344000000", 12367], ["1411430400000", 9869], ["1411516800000", 13156], ["1411603200000", 14209], ["1411689600000", 15964], ["1411776000000", 15085], ["1411862400000", 19514], ["1411948800000", 33069], ["1412035200000", 41951], ["1412121600000", 3711]];
+
+        var dates_graph_data_2012 = [["1409443200000", 525], ["1409529600000", 7641], ["1409616000000", 8638], ["1409702400000", 6954], ["1409788800000", 7276], ["1409875200000", 7946], ["1409961600000", 6513], ["1410048000000", 7268], ["1410134400000", 8386], ["1410220800000", 10372], ["1410307200000", 10613], ["1410393600000", 8214], ["1410480000000", 8694], ["1410566400000", 9046], ["1410652800000", 8725], ["1410739200000", 8627], ["1410825600000", 11119], ["1410912000000", 9520], ["1410998400000", 8408], ["1411084800000", 7387], ["1411171200000", 8284], ["1411257600000", 10391], ["1411344000000", 10656], ["1411430400000", 14308], ["1411516800000", 11642], ["1411603200000", 12848], ["1411689600000", 13158], ["1411776000000", 17252], ["1411862400000", 20409], ["1411948800000", 26966], ["1412035200000", 47387], ["1412121600000", 5554]];
+
+        var dates_graph_data_2011 = [["1409443200000", 222], ["1409529600000", 2373], ["1409616000000", 1560], ["1409702400000", 2211], ["1409788800000", 3473], ["1409875200000", 3333], ["1409961600000", 2968], ["1410048000000", 3050], ["1410134400000", 2850], ["1410220800000", 3146], ["1410307200000", 3546], ["1410393600000", 4306], ["1410480000000", 4069], ["1410566400000", 3755], ["1410652800000", 3378], ["1410739200000", 4762], ["1410825600000", 3596], ["1410912000000", 4648], ["1410998400000", 7038], ["1411084800000", 5095], ["1411171200000", 4185], ["1411257600000", 4669], ["1411344000000", 4390], ["1411430400000", 4807], ["1411516800000", 6123], ["1411603200000", 8159], ["1411689600000", 6691], ["1411776000000", 9158], ["1411862400000", 10408], ["1411948800000", 13188], ["1412035200000", 21971], ["1412121600000", 927]];
        
         var dates_graph = $("#dates_graph");
-        var dates_graph_data = [{ data: dates_graph_data_2014, label: "WLM 2014"}, { data: dates_graph_data_2013, label: "WLM 2013"}, { data: dates_graph_data_2012, label: "WLM 2012"}, { data: dates_graph_data_2011, label: "WLM 2011"}];
+        var dates_graph_data = [{ data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
         var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2014/08/31")).getTime(), max: (new Date("2014/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 4, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
         $.plot(dates_graph, dates_graph_data, dates_graph_options);
     });
@@ -336,10 +339,12 @@ def main():
         }
     });
 
-    </script>""" % (width, height, dates_graph_data)
+    </script>""" % (dates_graph_data)
+    dates_graph += dates_graph_core
+    dates_graph_mini += dates_graph_core
 
     hours_graph_data = u', '.join([u'["%s", %s]' % (k, v) for k, v in hours_list])
-    hours_graph = u"""<div id="hours_graph" style="width: %s;height: %s;"></div>
+    hours_graph = u"""<div id="hours_graph" style="width: 1000px;height: 250px;"></div>
     <script type="text/javascript">
     $(function () {
         var hours_graph_data = [%s];
@@ -349,7 +354,7 @@ def main():
         var hours_graph_options = { xaxis: { mode: null, tickSize: 1, tickDecimals: 0, min: 1, max: 23}, bars: { show: true, barWidth: 0.6 }, points: { show: false }, legend: { noColumns: 1 }, grid: { hoverable: true }, };
         $.plot(hours_graph, hours_graph_data, hours_graph_options);
     });
-    </script>""" % (width, height, hours_graph_data)
+    </script>""" % (hours_graph_data)
     
     countries_rank = u''
     c = 0
@@ -410,7 +415,7 @@ def main():
 <body style="background-color: white;">
 
 <center>
-<table border=0 cellpadding=0px width=%s style="text-align: center;">
+<table border=0 cellpadding=0px width=1000px style="text-align: center;">
 <tr>
 <td valign=middle ><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 <td valign=top width=99%%>
@@ -457,11 +462,27 @@ Download 2014 metadata and make your own statistics: <a href="files-2014.txt">CS
 </center>
 
 </body>
-</html>""" % (width, year, intro, dates_graph, hours_graph, countries_rank, resolutions_rank, sizes_rank, users_rank, datetime.datetime.now())
+</html>""" % (year, intro, dates_graph, hours_graph, countries_rank, resolutions_rank, sizes_rank, users_rank, datetime.datetime.now())
+    with open('%s/stats-%s.php' % (path, year), 'w') as f:
+        f.write(output.encode('utf-8'))
+    
+    output = u"""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Wiki Loves Monuments statistics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" type="text/css" href="wlm.css" />
+<script language="javascript" type="text/javascript" src="modules/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="modules/jquery.flot.js"></script>
+</head>
 
-    f = open('%s/stats-%s.php' % (path, year), 'w')
-    f.write(output.encode('utf-8'))
-    f.close()
+<body style="background-color: white;">
+%s
+</body>
+</html>""" % (dates_graph_mini)
+    with open('%s/stats-%s-mini.php' % (path, year), 'w') as f:
+        f.write(output.encode('utf-8'))
 
 if __name__ == '__main__':
     main()
