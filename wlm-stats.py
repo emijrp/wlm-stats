@@ -457,7 +457,7 @@ Download 2014 metadata and make your own statistics: <a href="files-2014.txt">CS
 <br/><br/><b>Other statistics:</b> <a href="http://toolserver.org/~superzerocool/wlm/?pais=germany">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2013/Tools">many more</a>!
 <br/><br/>
 
-<i><b>Last update:</b> %s (UTC). Developed by <a href="https://wikitech.wikimedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
+<i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
 
 </center>
 
