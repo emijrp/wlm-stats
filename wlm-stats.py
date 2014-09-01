@@ -142,6 +142,7 @@ countrynames = {
     u'jordan': u'Jordan', 
     u'kenya': u'Kenya', 
     u'latvia': u'Latvia', 
+    u'lebanon': u'Lebanon', 
     u'liechtenstein': u'Liechtenstein', 
     u'luxembourg': u'Luxembourg', 
     u'madagascar': u'Madagascar', 
@@ -360,7 +361,7 @@ def main():
     c = 0
     for k, v in countries_list:
         c += 1
-        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="http://commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], uploadcats[k], countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
+        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="http://commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://stats.wikilovesmonuments.cl/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], uploadcats[k], countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
     countries_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments %s">%s</a></b></td><td><b>%d</b></td><td><b>%.1f</b></td><td></td></tr>\n' % (year, sum([countries[k]['files'] for k in countries.keys()]), len(users.keys()), sum([countries[k]['size'] for k in countries.keys()])/1024.0/1024)
     countries_rank = u"""<table id="countries" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Country</th><th>Files</th><th>Uploaders</th><th>MBytes</th><th>Details</th></tr>
@@ -454,7 +455,7 @@ def main():
 
 Download 2014 metadata and make your own statistics: <a href="files-2014.txt">CSV</a> and <a href="files-2014.json">JSON</a>
 <br/><br/><b>See also:</b> <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">2013 metadata</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">2012 metadata</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">2011 metadata</a>)
-<br/><br/><b>Other statistics:</b> <a href="http://toolserver.org/~superzerocool/wlm/?pais=germany">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2013/Tools">many more</a>!
+<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2014/Tools">many more</a>!
 <br/><br/>
 
 <i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
