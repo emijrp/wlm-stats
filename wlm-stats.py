@@ -32,7 +32,7 @@ select page_title,
 from iwlinks join page on iwl_from=page_id join revision on page_latest = rev_id where iwl_prefix='mw' and iwl_title='Wiki_Loves_Monuments_mobile_application' and page_namespace=6
 """
 
-year = u'2014'
+year = u'2015'
 path = "/data/project/wlm-stats/public_html"
 uploadcats = { 
     u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
@@ -293,20 +293,23 @@ def main():
     dates_graph_data = u', '.join([u'["%s", %s]' % (convert2unix(k), v) for k, v in dates_list])
     dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 250px;"></div>"""
     dates_graph_mini = u"""<div id="dates_graph" style="width: 300px;height: 150px;"></div>"""
+    #unix timestamps are the 31 August - 1 October of current year for all (repeat)
     dates_graph_core = u"""
     <script type="text/javascript">
     $(function () {
-        var dates_graph_data_2014 = [%s];
+        var dates_graph_data_2015 = [%s];
         
-        var dates_graph_data_2013 = [["1409443200000", 409], ["1409529600000", 14345], ["1409616000000", 8265], ["1409702400000", 9208], ["1409788800000", 8663], ["1409875200000", 7886], ["1409961600000", 8220], ["1410048000000", 8453], ["1410134400000", 9373], ["1410220800000", 9606], ["1410307200000", 8279], ["1410393600000", 9629], ["1410480000000", 7791], ["1410566400000", 8388], ["1410652800000", 8160], ["1410739200000", 9568], ["1410825600000", 8790], ["1410912000000", 9468], ["1410998400000", 8790], ["1411084800000", 8381], ["1411171200000", 8992], ["1411257600000", 10009], ["1411344000000", 12367], ["1411430400000", 9869], ["1411516800000", 13156], ["1411603200000", 14209], ["1411689600000", 15964], ["1411776000000", 15085], ["1411862400000", 19514], ["1411948800000", 33069], ["1412035200000", 41951], ["1412121600000", 3711]];
+        var dates_graph_data_2014 = [["1440979200000", 837], ["1441065600000", 10066], ["1441152000000", 6531], ["1441238400000", 6595], ["1441324800000", 5285], ["1441411200000", 5430], ["1441497600000", 6534], ["1441584000000", 6925], ["1441670400000", 5187], ["1441756800000", 4659], ["1441843200000", 5070], ["1441929600000", 4157], ["1442016000000", 5416], ["1442102400000", 5198], ["1442188800000", 6586], ["1442275200000", 6604], ["1442361600000", 7280], ["1442448000000", 7816], ["1442534400000", 5855], ["1442620800000", 5128], ["1442707200000", 6786], ["1442793600000", 7939], ["1442880000000", 7570], ["1442966400000", 7779], ["1443052800000", 6979], ["1443139200000", 8705], ["1443225600000", 9844], ["1443312000000", 10181], ["1443398400000", 12936], ["1443484800000", 16419], ["1443571200000", 24490], ["1443657600000", 2690]];
+        
+        var dates_graph_data_2013 = [["1440979200000", 409], ["1441065600000", 14345], ["1441152000000", 8265], ["1441238400000", 9208], ["1441324800000", 8663], ["1441411200000", 7886], ["1441497600000", 8220], ["1441584000000", 8453], ["1441670400000", 9373], ["1441756800000", 9606], ["1441843200000", 8279], ["1441929600000", 9629], ["1442016000000", 7791], ["1442102400000", 8388], ["1442188800000", 8160], ["1442275200000", 9568], ["1442361600000", 8790], ["1442448000000", 9468], ["1442534400000", 8790], ["1442620800000", 8381], ["1442707200000", 8992], ["1442793600000", 10009], ["1442880000000", 12367], ["1442966400000", 9869], ["1443052800000", 13156], ["1443139200000", 14209], ["1443225600000", 15964], ["1443312000000", 15085], ["1443398400000", 19514], ["1443484800000", 33069], ["1443571200000", 41951], ["1443657600000", 3711]];
 
-        var dates_graph_data_2012 = [["1409443200000", 525], ["1409529600000", 7641], ["1409616000000", 8638], ["1409702400000", 6954], ["1409788800000", 7276], ["1409875200000", 7946], ["1409961600000", 6513], ["1410048000000", 7268], ["1410134400000", 8386], ["1410220800000", 10372], ["1410307200000", 10613], ["1410393600000", 8214], ["1410480000000", 8694], ["1410566400000", 9046], ["1410652800000", 8725], ["1410739200000", 8627], ["1410825600000", 11119], ["1410912000000", 9520], ["1410998400000", 8408], ["1411084800000", 7387], ["1411171200000", 8284], ["1411257600000", 10391], ["1411344000000", 10656], ["1411430400000", 14308], ["1411516800000", 11642], ["1411603200000", 12848], ["1411689600000", 13158], ["1411776000000", 17252], ["1411862400000", 20409], ["1411948800000", 26966], ["1412035200000", 47387], ["1412121600000", 5554]];
+        var dates_graph_data_2012 = [["1440979200000", 525], ["1441065600000", 7641], ["1441152000000", 8638], ["1441238400000", 6954], ["1441324800000", 7276], ["1441411200000", 7946], ["1441497600000", 6513], ["1441584000000", 7268], ["1441670400000", 8386], ["1441756800000", 10372], ["1441843200000", 10613], ["1441929600000", 8214], ["1442016000000", 8694], ["1442102400000", 9046], ["1442188800000", 8725], ["1442275200000", 8627], ["1442361600000", 11119], ["1442448000000", 9520], ["1442534400000", 8408], ["1442620800000", 7387], ["1442707200000", 8284], ["1442793600000", 10391], ["1442880000000", 10656], ["1442966400000", 14308], ["1443052800000", 11642], ["1443139200000", 12848], ["1443225600000", 13158], ["1443312000000", 17252], ["1443398400000", 20409], ["1443484800000", 26966], ["1443571200000", 47387], ["1443657600000", 5554]];
 
-        var dates_graph_data_2011 = [["1409443200000", 222], ["1409529600000", 2373], ["1409616000000", 1560], ["1409702400000", 2211], ["1409788800000", 3473], ["1409875200000", 3333], ["1409961600000", 2968], ["1410048000000", 3050], ["1410134400000", 2850], ["1410220800000", 3146], ["1410307200000", 3546], ["1410393600000", 4306], ["1410480000000", 4069], ["1410566400000", 3755], ["1410652800000", 3378], ["1410739200000", 4762], ["1410825600000", 3596], ["1410912000000", 4648], ["1410998400000", 7038], ["1411084800000", 5095], ["1411171200000", 4185], ["1411257600000", 4669], ["1411344000000", 4390], ["1411430400000", 4807], ["1411516800000", 6123], ["1411603200000", 8159], ["1411689600000", 6691], ["1411776000000", 9158], ["1411862400000", 10408], ["1411948800000", 13188], ["1412035200000", 21971], ["1412121600000", 927]];
+        var dates_graph_data_2011 = [["1440979200000", 222], ["1441065600000", 2373], ["1441152000000", 1560], ["1441238400000", 2211], ["1441324800000", 3473], ["1441411200000", 3333], ["1441497600000", 2968], ["1441584000000", 3050], ["1441670400000", 2850], ["1441756800000", 3146], ["1441843200000", 3546], ["1441929600000", 4306], ["1442016000000", 4069], ["1442102400000", 3755], ["1442188800000", 3378], ["1442275200000", 4762], ["1442361600000", 3596], ["1442448000000", 4648], ["1442534400000", 7038], ["1442620800000", 5095], ["1442707200000", 4185], ["1442793600000", 4669], ["1442880000000", 4390], ["1442966400000", 4807], ["1443052800000", 6123], ["1443139200000", 8159], ["1443225600000", 6691], ["1443312000000", 9158], ["1443398400000", 10408], ["1443484800000", 13188], ["1443571200000", 21971], ["1443657600000", 927]];
        
         var dates_graph = $("#dates_graph");
-        var dates_graph_data = [{ data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
-        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2014/08/31")).getTime(), max: (new Date("2014/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 4, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
+        var dates_graph_data = [{ data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
+        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2015/08/31")).getTime(), max: (new Date("2015/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 5, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
         $.plot(dates_graph, dates_graph_data, dates_graph_options);
     });
     
@@ -426,7 +429,7 @@ def main():
 <tr>
 <td valign=middle ><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 <td valign=top width=99%%>
-<br/><big><big><big><b><a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2014">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
+<br/><big><big><big><b><a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
 <br/><b>September %s</b>
 <br/><br/>%s
 <br/><br/>Uploads <a href="#day">per day</a> and <a href="#hour">per hour</a> - Rankings for <a href="#countries">countries</a>, <a href="#uploaders">uploaders</a>, <a href="#sizes">sizes</a> and <a href="#resolutions">resolutions</a>
@@ -459,9 +462,9 @@ def main():
 </tr>
 </table>
 
-Download 2014 metadata and make your own statistics: <a href="files-2014.txt">CSV</a> and <a href="files-2014.json">JSON</a>
-<br/><br/><b>See also:</b> <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">2013 metadata</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">2012 metadata</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">2011 metadata</a>)
-<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2014/Tools">many more</a>!
+Download 2015 metadata and make your own statistics: <a href="files-2015.txt">CSV</a> and <a href="files-2015.json">JSON</a>
+<br/><br/><b>See also:</b> <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
+<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015/Tools">many more</a>!
 <br/><br/>
 
 <i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
