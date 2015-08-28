@@ -477,6 +477,12 @@ Download 2015 metadata and make your own statistics: <a href="files-2015.txt">CS
 
 <i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
 
+<br/><br/>
+
+<a href="//tools.wmflabs.org/wlm-maps/"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Wiki_Loves_Monuments_2014_-_2014-08-29.png/500px-Wiki_Loves_Monuments_2014_-_2014-08-29.png" title="Check the map!" /></a>
+
+<br/><br/>
+
 </center>
 
 </body>
