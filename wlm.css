@@ -42,7 +42,9 @@ body {
 .menu a:hover {
     text-decoration: underline;
 }
-
+a {
+    text-decoration: none;
+}
 /**
  * wikitable from MediaWiki shared.css
  */
