@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2012-2013 emijrp <emijrp@gmail.com>
+# Copyright (C) 2012-2015 emijrp <emijrp@gmail.com>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -119,7 +119,7 @@ countrynames = {
     u'andorra': u'Andorra', 
     u'antarctica': u'Antarctica', 
     u'argentina': u'Argentina', 
-    #u'armenia': u'Armenia', 
+    u'armenia': u'Armenia', 
     u'armenia-nagorno': u'Armenia & Nagorno-Karabakh', 
     u'aruba': u'Aruba', 
     u'austria': u'Austria', 
@@ -378,8 +378,8 @@ def main():
     c = 0
     for k, v in countries_list:
         c += 1
-        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="http://commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://stats.wikilovesmonuments.cl/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], uploadcats[k], countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
-    countries_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments %s">%s</a></b></td><td><b>%d</b></td><td><b>%.1f</b></td><td></td></tr>\n' % (year, sum([countries[k]['files'] for k in countries.keys()]), len(users.keys()), sum([countries[k]['size'] for k in countries.keys()])/1024.0/1024)
+        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="//commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://stats.wikilovesmonuments.cl/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], uploadcats[k], countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
+    countries_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="//commons.wikimedia.org/wiki/Category:Images_from_Wiki_Loves_Monuments_%s">%s</a></b></td><td><b>%d</b></td><td><b>%.1f</b></td><td></td></tr>\n' % (year, sum([countries[k]['files'] for k in countries.keys()]), len(users.keys()), sum([countries[k]['size'] for k in countries.keys()])/1024.0/1024)
     countries_rank = u"""<table id="countries" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Country</th><th>Files</th><th>Uploaders</th><th>MBytes</th><th>Details</th></tr>
     %s
@@ -389,8 +389,8 @@ def main():
     c = 0
     for k, v in users_list[:100]:
         c += 1
-        users_rank += u'<tr><td>%s</td><td><a href="http://commons.wikimedia.org/wiki/User:%s">%s</a></td><td><a href="http://commons.wikimedia.org/wiki/Special:ListFiles/%s">%s</a></td><td>%.1f</td></tr>' % (c, k, k, k, users[k]['files'], users[k]['size']/1024.0/1024)
-    users_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments %s">%s</a></b></td><td><b>%.1f</b></td></tr>' % (year, sum([users[k]['files'] for k in users.keys()]), sum([users[k]['size'] for k in users.keys()])/1024.0/1024)
+        users_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td><a href="//commons.wikimedia.org/wiki/Special:ListFiles/%s">%s</a></td><td>%.1f</td></tr>' % (c, k, k, k, users[k]['files'], users[k]['size']/1024.0/1024)
+    users_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="//commons.wikimedia.org/wiki/Category:Images_from_Wiki_Loves_Monuments_%s">%s</a></b></td><td><b>%.1f</b></td></tr>' % (year, sum([users[k]['files'] for k in users.keys()]), sum([users[k]['size'] for k in users.keys()])/1024.0/1024)
     users_rank = u"""<table id="uploaders" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Uploader</th><th>Files</th><th>MBytes</th></tr>
     %s
@@ -401,7 +401,7 @@ def main():
     for k, v in resolutions_list[:15]:
         c += 1
         resolutions_rank += u'<tr><td>%s</td><td>%s</td><td>%s</td><td>%.1f</td></tr>' % (c, k, resolutions[k]['files'], resolutions[k]['size']/1024.0/1024)
-    resolutions_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments %s">%s</a></b></td><td><b>%.1f</b></td></tr>' % (year, sum([resolutions[k]['files'] for k in resolutions.keys()]), sum([resolutions[k]['size'] for k in resolutions.keys()])/1024.0/1024)
+    resolutions_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="//commons.wikimedia.org/wiki/Category:Images_from_Wiki_Loves_Monuments_%s">%s</a></b></td><td><b>%.1f</b></td></tr>' % (year, sum([resolutions[k]['files'] for k in resolutions.keys()]), sum([resolutions[k]['size'] for k in resolutions.keys()])/1024.0/1024)
     resolutions_rank = u"""<table id="resolutions" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Resolution</th><th>Files</th><th>MBytes</th></tr>
     %s
@@ -411,7 +411,7 @@ def main():
     c = 0
     for size, title, username, country in sizes_list[:15]: 
         c += 1
-        sizes_rank += u'<tr><td>%s</td><td><a href="http://commons.wikimedia.org/wiki/File:%s">%s</a></td><td>%.1f</td><td><a href="http://commons.wikimedia.org/wiki/User:%s">%s</a></td><td>%s</td></tr>' % (c, title, len(title)>10 and (u'%s...' % title[:10]) or title, size/1024.0/1024, username, username, countrynames[country])
+        sizes_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/File:%s">%s</a></td><td>%.1f</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td>%s</td></tr>' % (c, title, len(title)>10 and (u'%s...' % title[:10]) or title, size/1024.0/1024, username, username, countrynames[country])
     sizes_rank += u'<tr><td></td><td><b>Total</b></td><td><b>%.1f</b></td><td></td><td></td></tr>' % (sum([resolutions[k]['size'] for k in resolutions.keys()])/1024.0/1024)
     sizes_rank = u"""<table id="sizes" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>File</th><th>MBytes</th><th>Uploader</th><th>Country</th></tr>
@@ -435,14 +435,14 @@ def main():
 <center>
 <table border=0 cellpadding=0px width=1000px style="text-align: center;">
 <tr>
-<td valign=middle ><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
+<td valign=middle ><img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 <td valign=top width=99%%>
-<br/><big><big><big><b><a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
+<br/><big><big><big><b><a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
 <br/><b>September %s</b>
 <br/><br/>%s
 <br/><br/>Uploads <a href="#day">per day</a> and <a href="#hour">per hour</a> - Rankings for <a href="#countries">countries</a>, <a href="#uploaders">uploaders</a>, <a href="#sizes">sizes</a> and <a href="#resolutions">resolutions</a>
 </td>
-<td valign=middle><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
+<td valign=middle><img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 </tr>
 </table>
 
@@ -472,7 +472,7 @@ def main():
 
 Download 2015 metadata and make your own statistics: <a href="files-2015.txt">CSV</a> and <a href="files-2015.json">JSON</a>
 <br/><br/><b>See also:</b> <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
-<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015/Tools">many more</a>!
+<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015/Tools">many more</a>!
 <br/><br/>
 
 <i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
