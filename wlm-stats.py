@@ -378,7 +378,7 @@ def main():
     c = 0
     for k, v in countries_list:
         c += 1
-        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="//commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://stats.wikilovesmonuments.cl/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], uploadcats[k], countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
+        countries_rank += u'<tr><td>%s</td><td>%s</td><td><a href="//commons.wikimedia.org/wiki/Category:%s">%s</a></td><td>%d</td><td>%.1f</td><td><a href="http://stats.wikilovesmonuments.cl/?pais=%s">Details</a></td></tr>\n' % (c, countrynames[k], re.sub(' ', '_', uploadcats[k]), countries[k]['files'], len(countries[k]['uploaders']), countries[k]['size']/1024.0/1024, k)
     countries_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="//commons.wikimedia.org/wiki/Category:Images_from_Wiki_Loves_Monuments_%s">%s</a></b></td><td><b>%d</b></td><td><b>%.1f</b></td><td></td></tr>\n' % (year, sum([countries[k]['files'] for k in countries.keys()]), len(users.keys()), sum([countries[k]['size'] for k in countries.keys()])/1024.0/1024)
     countries_rank = u"""<table id="countries" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Country</th><th>Files</th><th>Uploaders</th><th>MBytes</th><th>Details</th></tr>
@@ -389,7 +389,7 @@ def main():
     c = 0
     for k, v in users_list[:100]:
         c += 1
-        users_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td><a href="//commons.wikimedia.org/wiki/Special:ListFiles/%s">%s</a></td><td>%.1f</td></tr>' % (c, k, k, k, users[k]['files'], users[k]['size']/1024.0/1024)
+        users_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td><a href="//commons.wikimedia.org/wiki/Special:ListFiles/%s">%s</a></td><td>%.1f</td></tr>' % (c, re.sub(' ', '_', k), k, k, users[k]['files'], users[k]['size']/1024.0/1024)
     users_rank += u'<tr><td></td><td><b>Total</b></td><td><b><a href="//commons.wikimedia.org/wiki/Category:Images_from_Wiki_Loves_Monuments_%s">%s</a></b></td><td><b>%.1f</b></td></tr>' % (year, sum([users[k]['files'] for k in users.keys()]), sum([users[k]['size'] for k in users.keys()])/1024.0/1024)
     users_rank = u"""<table id="uploaders" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Uploader</th><th>Files</th><th>MBytes</th></tr>
@@ -411,7 +411,7 @@ def main():
     c = 0
     for size, title, username, country in sizes_list[:15]: 
         c += 1
-        sizes_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/File:%s">%s</a></td><td>%.1f</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td>%s</td></tr>' % (c, title, len(title)>10 and (u'%s...' % title[:10]) or title, size/1024.0/1024, username, username, countrynames[country])
+        sizes_rank += u'<tr><td>%s</td><td><a href="//commons.wikimedia.org/wiki/File:%s">%s</a></td><td>%.1f</td><td><a href="//commons.wikimedia.org/wiki/User:%s">%s</a></td><td>%s</td></tr>' % (c, title, len(title)>10 and (u'%s...' % title[:10]) or title, size/1024.0/1024, re.sub(' ', '_', username), username, countrynames[country])
     sizes_rank += u'<tr><td></td><td><b>Total</b></td><td><b>%.1f</b></td><td></td><td></td></tr>' % (sum([resolutions[k]['size'] for k in resolutions.keys()])/1024.0/1024)
     sizes_rank = u"""<table id="sizes" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>File</th><th>MBytes</th><th>Uploader</th><th>Country</th></tr>
