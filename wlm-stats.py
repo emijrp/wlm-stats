@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2012-2015 emijrp <emijrp@gmail.com>
+# Copyright (C) 2012-2016 emijrp <emijrp@gmail.com>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -32,26 +32,28 @@ select page_title,
 from iwlinks join page on iwl_from=page_id join revision on page_latest = rev_id where iwl_prefix='mw' and iwl_title='Wiki_Loves_Monuments_mobile_application' and page_namespace=6
 """
 
-year = u'2015'
+year = u'2016'
 path = "/data/project/wlm-stats/public_html"
 uploadcats = { 
-    u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
+    #u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
     u'algeria': u'Images from Wiki Loves Monuments %s in Algeria' % (year), 
-    #u'andorra': u'Images from Wiki Loves Monuments %s in Andorra' % (year), 
+    u'andorra': u'Images from Wiki Loves Monuments %s in Andorra' % (year), 
     #u'antarctica': u'Images from Wiki Loves Monuments %s in Antarctica' % (year), 
     #u'argentina': u'Images from Wiki Loves Monuments %s in Argentina' % (year), 
     #u'armenia': u'Images from Wiki Loves Monuments %s in Armenia' % (year), 
-    u'armenia-nagorno': u'Images from Wiki Loves Monuments %s in Armenia & Nagorno-Karabakh' % (year), 
+    #u'armenia-nagorno': u'Images from Wiki Loves Monuments %s in Armenia & Nagorno-Karabakh' % (year), 
     #u'aruba': u'Images from Wiki Loves Monuments %s in Aruba' % (year), 
-    u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
+    #u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
     u'azerbaijan': u'Images from Wiki Loves Monuments %s in Azerbaijan' % (year), 
+    u'bangladesh': u'Images from Wiki Loves Monuments %s in Bangladesh' % (year), 
     #u'belarus': u'Images from Wiki Loves Monuments %s in Belarus' % (year), 
-    #u'belgium': u'Images from Wiki Loves Monuments %s in Belgium' % (year), 
+    u'belgium': u'Images from Wiki Loves Monuments %s in Belgium' % (year), 
     #u'bolivia': u'Images from Wiki Loves Monuments %s in Bolivia' % (year), 
     u'brazil': u'Images from Wiki Loves Monuments %s in Brazil' % (year), 
     u'bulgaria': u'Images from Wiki Loves Monuments %s in Bulgaria' % (year), 
+    u'california': u'Images from Wiki Loves Monuments %s in California' % (year), 
     #u'cambodia': u'Images from Wiki Loves Monuments %s in Cambodia' % (year), 
-    #u'cameroon': u'Images from Wiki Loves Monuments %s in Cameroon' % (year), 
+    u'cameroon': u'Images from Wiki Loves Monuments %s in Cameroon' % (year), 
     #u'canada': u'Images from Wiki Loves Monuments %s in Canada' % (year), 
     #u'chile': u'Images from Wiki Loves Monuments %s in Chile' % (year), 
     #u'china': u'Images from Wiki Loves Monuments %s in China' % (year), 
@@ -60,13 +62,15 @@ uploadcats = {
     #u'denmark': u'Images from Wiki Loves Monuments %s in Denmark' % (year), 
     u'egypt': u'Images from Wiki Loves Monuments %s in Egypt' % (year), 
     #u'elsalvador': u'Images from Wiki Loves Monuments %s in El Salvador' % (year), 
-    u'estonia': u'Images from Wiki Loves Monuments %s in Estonia' % (year), 
+    #u'estonia': u'Images from Wiki Loves Monuments %s in Estonia' % (year), 
     u'france': u'Images from Wiki Loves Monuments %s in France' % (year), 
+    u'georgia': u'Images from Wiki Loves Monuments %s in Georgia' % (year), 
     u'germany': u'Images from Wiki Loves Monuments %s in Germany' % (year), 
-    #u'ghana': u'Images from Wiki Loves Monuments %s in Ghana' % (year), 
+    u'ghana': u'Images from Wiki Loves Monuments %s in Ghana' % (year), 
+    u'greece': u'Images from Wiki Loves Monuments %s in Greece' % (year), 
     #u'hongkong': u'Images from Wiki Loves Monuments %s in Hong Kong' % (year), 
     #u'hungary': u'Images from Wiki Loves Monuments %s in Hungary' % (year), 
-    #u'india': u'Images from Wiki Loves Monuments %s in India' % (year), 
+    u'india': u'Images from Wiki Loves Monuments %s in India' % (year), 
     u'iran': u'Images from Wiki Loves Monuments %s in Iran' % (year), 
     #u'iraq': u'Images from Wiki Loves Monuments %s in Iraq' % (year), 
     u'ireland': u'Images from Wiki Loves Monuments %s in Ireland' % (year), 
@@ -78,28 +82,33 @@ uploadcats = {
     u'latvia': u'Images from Wiki Loves Monuments %s in Latvia' % (year), 
     #u'lebanon': u'Images from Wiki Loves Monuments %s in Lebanon' % (year), 
     #u'liechtenstein': u'Images from Wiki Loves Monuments %s in Liechtenstein' % (year), 
-    #u'luxembourg': u'Images from Wiki Loves Monuments %s in Luxembourg' % (year), 
-    u'macedonia': u'Images from Wiki Loves Monuments %s in Macedonia' % (year), 
+    u'luxembourg': u'Images from Wiki Loves Monuments %s in Luxembourg' % (year), 
+    #u'macedonia': u'Images from Wiki Loves Monuments %s in Macedonia' % (year), 
     #u'madagascar': u'Images from Wiki Loves Monuments %s in Madagascar' % (year), 
     u'malaysia': u'Images from Wiki Loves Monuments %s in Malaysia' % (year), 
-    u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
-    #u'morocco': u'Images from Wiki Loves Monuments %s in Morocco' % (year), 
+    u'malta': u'Images from Wiki Loves Monuments %s in Malta' % (year), 
+    #u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
+    u'morocco': u'Images from Wiki Loves Monuments %s in Morocco' % (year), 
     u'nepal': u'Images from Wiki Loves Monuments %s in Nepal' % (year), 
-    u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
+    #u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
+    u'nigeria': u'Images from Wiki Loves Monuments %s in Nigeria' % (year), 
     u'norway': u'Images from Wiki Loves Monuments %s in Norway' % (year), 
+    u'ohio': u'Images from Wiki Loves Monuments %s in Ohio' % (year), 
     u'pakistan': u'Images from Wiki Loves Monuments %s in Pakistan' % (year), 
-    u'palestine': u'Images from Wiki Loves Monuments %s in Palestine' % (year), 
-    #u'panama': u'Images from Wiki Loves Monuments %s in Panama' % (year), 
+    #u'palestine': u'Images from Wiki Loves Monuments %s in Palestine' % (year), 
+    u'panama': u'Images from Wiki Loves Monuments %s in Panama' % (year), 
+    u'peru': u'Images from Wiki Loves Monuments %s in the Peru' % (year), 
     #u'philippines': u'Images from Wiki Loves Monuments %s in the Philippines' % (year), 
     #u'poland': u'Images from Wiki Loves Monuments %s in Poland' % (year), 
     #u'portugal': u'Images from Wiki Loves Monuments %s in Portugal' % (year), 
     #u'qatar': u'Images from Wiki Loves Monuments %s in Qatar' % (year), 
-    u'romania': u'Images from Wiki Loves Monuments %s in Romania' % (year), 
+    #u'romania': u'Images from Wiki Loves Monuments %s in Romania' % (year), 
     u'russia': u'Images from Wiki Loves Monuments %s in Russia' % (year), 
-    #u'serbia': u'Images from Wiki Loves Monuments %s in Serbia' % (year), 
+    u'serbia': u'Images from Wiki Loves Monuments %s in Serbia' % (year), 
     u'slovakia': u'Images from Wiki Loves Monuments %s in Slovakia' % (year), 
-    u'southafrica': u'Images from Wiki Loves Monuments %s in South Africa' % (year), 
-    #u'southtyrol': u'Images from Wiki Loves Monuments %s in South Tyrol' % (year), 
+    #u'southafrica': u'Images from Wiki Loves Monuments %s in South Africa' % (year), 
+    u'southkorea': u'Images from Wiki Loves Monuments %s in South Korea' % (year), 
+    u'southtyrol': u'Images from Wiki Loves Monuments %s in South Tyrol' % (year), 
     u'spain': u'Images from Wiki Loves Monuments %s in Spain' % (year), 
     u'sweden': u'Images from Wiki Loves Monuments %s in Sweden' % (year), 
     #u'switzerland': u'Images from Wiki Loves Monuments %s in Switzerland' % (year), 
@@ -107,8 +116,9 @@ uploadcats = {
     #u'taiwan': u'Images from Wiki Loves Monuments %s in Taiwan' % (year), 
     u'thailand': u'Images from Wiki Loves Monuments %s in Thailand' % (year), 
     u'tunisia': u'Images from Wiki Loves Monuments %s in Tunisia' % (year), 
+    u'turkey': u'Images from Wiki Loves Monuments %s in Turkey' % (year), 
     u'ukraine': u'Images from Wiki Loves Monuments %s in Ukraine' % (year), 
-    #u'unitedkingdom': u'Images from Wiki Loves Monuments %s in the United Kingdom' % (year), 
+    u'unitedkingdom': u'Images from Wiki Loves Monuments %s in the United Kingdom' % (year), 
     #u'unitedstates': u'Images from Wiki Loves Monuments %s in the United States' % (year), 
     #u'uruguay': u'Images from Wiki Loves Monuments %s in Uruguay' % (year), 
     #u'venezuela': u'Images from Wiki Loves Monuments %s in Venezuela' % (year), 
@@ -125,11 +135,13 @@ countrynames = {
     u'aruba': u'Aruba', 
     u'austria': u'Austria', 
     u'azerbaijan': u'Azerbaijan', 
+    u'bangladesh': u'Bangladesh', 
     u'belarus': u'Belarus', 
     u'belgium': u'Belgium', 
     u'bolivia': u'Bolivia', 
     u'brazil': u'Brazil', 
     u'bulgaria': u'Bulgaria', 
+    u'california': u'California', 
     u'cambodia': u'Cambodia', 
     u'cameroon': u'Cameroon', 
     u'canada': u'Canada', 
@@ -142,8 +154,10 @@ countrynames = {
     u'elsalvador': u'El Salvador', 
     u'estonia': u'Estonia', 
     u'france': u'France', 
+    u'georgia': u'Georgia', 
     u'germany': u'Germany', 
     u'ghana': u'Ghana', 
+    u'greece': u'Greece', 
     u'hongkong': u'Hong Kong', 
     u'hungary': u'Hungary', 
     u'india': u'India', 
@@ -162,10 +176,13 @@ countrynames = {
     u'macedonia': u'Macedonia', 
     u'madagascar': u'Madagascar', 
     u'malaysia': u'Malaysia', 
+    u'malta': u'Malta', 
     u'mexico': u'Mexico', 
     u'nepal': u'Nepal', 
     u'netherlands': u'Netherlands', 
+    u'nigeria': u'Nigeria', 
     u'norway': u'Norway', 
+    u'ohio': u'Ohio', 
     u'pakistan': u'Pakistan', 
     u'palestine': u'Palestine', 
     u'panama': u'Panama', 
@@ -178,6 +195,7 @@ countrynames = {
     u'serbia': u'Serbia', 
     u'slovakia': u'Slovakia', 
     u'southafrica': u'South Africa', 
+    u'southkorea': u'South Korea', 
     u'southtyrol': u'South Tyrol', 
     u'spain': u'Spain', 
     u'sweden': u'Sweden', 
@@ -186,6 +204,7 @@ countrynames = {
     u'taiwan': u'Taiwan', 
     u'thailand': u'Thailand', 
     u'tunisia': u'Tunisia', 
+    u'turkey': u'Turkey', 
     u'ukraine': u'Ukraine', 
     u'unitedkingdom': u'United Kingdom', 
     u'unitedstates': u'United States', 
@@ -307,19 +326,21 @@ def main():
     dates_graph_core = u"""
     <script type="text/javascript">
     $(function () {
-        var dates_graph_data_2015 = [%s];
+        var dates_graph_data_2016 = [%s];
         
-        var dates_graph_data_2014 = [["1440979200000", 837], ["1441065600000", 10066], ["1441152000000", 6531], ["1441238400000", 6595], ["1441324800000", 5285], ["1441411200000", 5430], ["1441497600000", 6534], ["1441584000000", 6925], ["1441670400000", 5187], ["1441756800000", 4659], ["1441843200000", 5070], ["1441929600000", 4157], ["1442016000000", 5416], ["1442102400000", 5198], ["1442188800000", 6586], ["1442275200000", 6604], ["1442361600000", 7280], ["1442448000000", 7816], ["1442534400000", 5855], ["1442620800000", 5128], ["1442707200000", 6786], ["1442793600000", 7939], ["1442880000000", 7570], ["1442966400000", 7779], ["1443052800000", 6979], ["1443139200000", 8705], ["1443225600000", 9844], ["1443312000000", 10181], ["1443398400000", 12936], ["1443484800000", 16419], ["1443571200000", 24490], ["1443657600000", 2690]];
+        var dates_graph_data_2015 = [["1472601600000", 852], ["1472688000000", 6981], ["1472774400000", 6028], ["1472860800000", 6519], ["1472947200000", 7189], ["1473033600000", 5689], ["1473120000000", 6726], ["1473206400000", 4823], ["1473292800000", 3824], ["1473379200000", 4276], ["1473465600000", 3521], ["1473552000000", 4177], ["1473638400000", 5003], ["1473724800000", 6793], ["1473811200000", 4989], ["1473897600000", 5869], ["1473984000000", 4800], ["1474070400000", 4802], ["1474156800000", 4393], ["1474243200000", 5661], ["1474329600000", 7025], ["1474416000000", 8293], ["1474502400000", 7860], ["1474588800000", 6899], ["1474675200000", 7749], ["1474761600000", 6534], ["1474848000000", 7894], ["1474934400000", 10949], ["1475020800000", 14017], ["1475107200000", 15320], ["1475193600000", 22803], ["1475280000000", 825]];
         
-        var dates_graph_data_2013 = [["1440979200000", 409], ["1441065600000", 14345], ["1441152000000", 8265], ["1441238400000", 9208], ["1441324800000", 8663], ["1441411200000", 7886], ["1441497600000", 8220], ["1441584000000", 8453], ["1441670400000", 9373], ["1441756800000", 9606], ["1441843200000", 8279], ["1441929600000", 9629], ["1442016000000", 7791], ["1442102400000", 8388], ["1442188800000", 8160], ["1442275200000", 9568], ["1442361600000", 8790], ["1442448000000", 9468], ["1442534400000", 8790], ["1442620800000", 8381], ["1442707200000", 8992], ["1442793600000", 10009], ["1442880000000", 12367], ["1442966400000", 9869], ["1443052800000", 13156], ["1443139200000", 14209], ["1443225600000", 15964], ["1443312000000", 15085], ["1443398400000", 19514], ["1443484800000", 33069], ["1443571200000", 41951], ["1443657600000", 3711]];
+        var dates_graph_data_2014 = [["1472601600000", 837], ["1472688000000", 10066], ["1472774400000", 6531], ["1472860800000", 6595], ["1472947200000", 5285], ["1473033600000", 5430], ["1473120000000", 6534], ["1473206400000", 6925], ["1473292800000", 5187], ["1473379200000", 4659], ["1473465600000", 5070], ["1473552000000", 4157], ["1473638400000", 5416], ["1473724800000", 5198], ["1473811200000", 6586], ["1473897600000", 6604], ["1473984000000", 7280], ["1474070400000", 7816], ["1474156800000", 5855], ["1474243200000", 5128], ["1474329600000", 6786], ["1474416000000", 7939], ["1474502400000", 7570], ["1474588800000", 7779], ["1474675200000", 6979], ["1474761600000", 8705], ["1474848000000", 9844], ["1474934400000", 10181], ["1475020800000", 12936], ["1475107200000", 16419], ["1475193600000", 24490], ["1475280000000", 2690]];
+        
+        var dates_graph_data_2013 = [["1472601600000", 409], ["1472688000000", 14345], ["1472774400000", 8265], ["1472860800000", 9208], ["1472947200000", 8663], ["1473033600000", 7886], ["1473120000000", 8220], ["1473206400000", 8453], ["1473292800000", 9373], ["1473379200000", 9606], ["1473465600000", 8279], ["1473552000000", 9629], ["1473638400000", 7791], ["1473724800000", 8388], ["1473811200000", 8160], ["1473897600000", 9568], ["1473984000000", 8790], ["1474070400000", 9468], ["1474156800000", 8790], ["1474243200000", 8381], ["1474329600000", 8992], ["1474416000000", 10009], ["1474502400000", 12367], ["1474588800000", 9869], ["1474675200000", 13156], ["1474761600000", 14209], ["1474848000000", 15964], ["1474934400000", 15085], ["1475020800000", 19514], ["1475107200000", 33069], ["1475193600000", 41951], ["1475280000000", 3711]];
 
-        var dates_graph_data_2012 = [["1440979200000", 525], ["1441065600000", 7641], ["1441152000000", 8638], ["1441238400000", 6954], ["1441324800000", 7276], ["1441411200000", 7946], ["1441497600000", 6513], ["1441584000000", 7268], ["1441670400000", 8386], ["1441756800000", 10372], ["1441843200000", 10613], ["1441929600000", 8214], ["1442016000000", 8694], ["1442102400000", 9046], ["1442188800000", 8725], ["1442275200000", 8627], ["1442361600000", 11119], ["1442448000000", 9520], ["1442534400000", 8408], ["1442620800000", 7387], ["1442707200000", 8284], ["1442793600000", 10391], ["1442880000000", 10656], ["1442966400000", 14308], ["1443052800000", 11642], ["1443139200000", 12848], ["1443225600000", 13158], ["1443312000000", 17252], ["1443398400000", 20409], ["1443484800000", 26966], ["1443571200000", 47387], ["1443657600000", 5554]];
+        var dates_graph_data_2012 = [["1472601600000", 525], ["1472688000000", 7641], ["1472774400000", 8638], ["1472860800000", 6954], ["1472947200000", 7276], ["1473033600000", 7946], ["1473120000000", 6513], ["1473206400000", 7268], ["1473292800000", 8386], ["1473379200000", 10372], ["1473465600000", 10613], ["1473552000000", 8214], ["1473638400000", 8694], ["1473724800000", 9046], ["1473811200000", 8725], ["1473897600000", 8627], ["1473984000000", 11119], ["1474070400000", 9520], ["1474156800000", 8408], ["1474243200000", 7387], ["1474329600000", 8284], ["1474416000000", 10391], ["1474502400000", 10656], ["1474588800000", 14308], ["1474675200000", 11642], ["1474761600000", 12848], ["1474848000000", 13158], ["1474934400000", 17252], ["1475020800000", 20409], ["1475107200000", 26966], ["1475193600000", 47387], ["1475280000000", 5554]];
 
-        var dates_graph_data_2011 = [["1440979200000", 222], ["1441065600000", 2373], ["1441152000000", 1560], ["1441238400000", 2211], ["1441324800000", 3473], ["1441411200000", 3333], ["1441497600000", 2968], ["1441584000000", 3050], ["1441670400000", 2850], ["1441756800000", 3146], ["1441843200000", 3546], ["1441929600000", 4306], ["1442016000000", 4069], ["1442102400000", 3755], ["1442188800000", 3378], ["1442275200000", 4762], ["1442361600000", 3596], ["1442448000000", 4648], ["1442534400000", 7038], ["1442620800000", 5095], ["1442707200000", 4185], ["1442793600000", 4669], ["1442880000000", 4390], ["1442966400000", 4807], ["1443052800000", 6123], ["1443139200000", 8159], ["1443225600000", 6691], ["1443312000000", 9158], ["1443398400000", 10408], ["1443484800000", 13188], ["1443571200000", 21971], ["1443657600000", 927]];
+        var dates_graph_data_2011 = [["1472601600000", 222], ["1472688000000", 2373], ["1472774400000", 1560], ["1472860800000", 2211], ["1472947200000", 3473], ["1473033600000", 3333], ["1473120000000", 2968], ["1473206400000", 3050], ["1473292800000", 2850], ["1473379200000", 3146], ["1473465600000", 3546], ["1473552000000", 4306], ["1473638400000", 4069], ["1473724800000", 3755], ["1473811200000", 3378], ["1473897600000", 4762], ["1473984000000", 3596], ["1474070400000", 4648], ["1474156800000", 7038], ["1474243200000", 5095], ["1474329600000", 4185], ["1474416000000", 4669], ["1474502400000", 4390], ["1474588800000", 4807], ["1474675200000", 6123], ["1474761600000", 8159], ["1474848000000", 6691], ["1474934400000", 9158], ["1475020800000", 10408], ["1475107200000", 13188], ["1475193600000", 21971], ["1475280000000", 927]];
        
         var dates_graph = $("#dates_graph");
-        var dates_graph_data = [{ data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
-        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2015/08/31")).getTime(), max: (new Date("2015/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 5, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
+        var dates_graph_data = [{ data: dates_graph_data_2016, label: "2016"}, { data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
+        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2016/08/31")).getTime(), max: (new Date("2016/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 6, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
         $.plot(dates_graph, dates_graph_data, dates_graph_options);
     });
     
@@ -439,7 +460,7 @@ def main():
 <tr>
 <td valign=middle ><img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 <td valign=top width=99%%>
-<br/><big><big><big><b><a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
+<br/><big><big><big><b><a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2016">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
 <br/><b>September %s</b>
 <br/><br/>%s
 <br/><br/>Uploads <a href="#day">per day</a> and <a href="#hour">per hour</a> - Rankings for <a href="#countries">countries</a>, <a href="#uploaders">uploaders</a>, <a href="#sizes">sizes</a> and <a href="#resolutions">resolutions</a>
@@ -472,8 +493,8 @@ def main():
 </tr>
 </table>
 
-Download 2015 metadata and make your own statistics: <a href="files-2015.txt">CSV</a> and <a href="files-2015.json">JSON</a>
-<br/><br/><b>See also:</b> <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
+Download 2016 metadata and make your own statistics: <a href="files-2016.txt">CSV</a> and <a href="files-2016.json">JSON</a>
+<br/><br/><b>See also:</b> <a href="stats-2015.php">2015 stats</a> (<a href="files-2015.txt">csv</a>, <a href="files-2015.json">json</a>), <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
 <br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015/Tools">many more</a>!
 <br/><br/>
 

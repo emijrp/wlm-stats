@@ -1,1 +1,1 @@
-<?php include('stats-2015.php'); ?>
+<?php include('stats-2016.php'); ?>
