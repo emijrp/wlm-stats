@@ -178,6 +178,7 @@ countrynames = {
     u'malaysia': u'Malaysia', 
     u'malta': u'Malta', 
     u'mexico': u'Mexico', 
+    u'morocco': u'Morocco', 
     u'nepal': u'Nepal', 
     u'netherlands': u'Netherlands', 
     u'nigeria': u'Nigeria', 
