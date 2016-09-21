@@ -119,7 +119,7 @@ uploadcats = {
     u'turkey': u'Images from Wiki Loves Monuments %s in Turkey' % (year), 
     u'ukraine': u'Images from Wiki Loves Monuments %s in Ukraine' % (year), 
     u'unitedkingdom': u'Images from Wiki Loves Monuments %s in the United Kingdom' % (year), 
-    #u'unitedstates': u'Images from Wiki Loves Monuments %s in the United States' % (year), 
+    u'unitedstates': u'Images from Wiki Loves Monuments %s in the United States' % (year), 
     #u'uruguay': u'Images from Wiki Loves Monuments %s in Uruguay' % (year), 
     #u'venezuela': u'Images from Wiki Loves Monuments %s in Venezuela' % (year), 
 }
