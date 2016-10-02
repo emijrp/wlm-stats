@@ -183,6 +183,7 @@ countrynames = {
     u'pakistan': u'Pakistan', 
     u'palestine': u'Palestine', 
     u'panama': u'Panama', 
+    u'peru': u'Peru', 
     u'philippines': u'Philippines', 
     u'poland': u'Poland', 
     u'portugal': u'Portugal', 
