@@ -95,7 +95,7 @@ uploadcats = {
     u'pakistan': u'Images from Wiki Loves Monuments %s in Pakistan' % (year), 
     #u'palestine': u'Images from Wiki Loves Monuments %s in Palestine' % (year), 
     u'panama': u'Images from Wiki Loves Monuments %s in Panama' % (year), 
-    u'peru': u'Images from Wiki Loves Monuments %s in the Peru' % (year), 
+    u'peru': u'Images from Wiki Loves Monuments %s in Peru' % (year), 
     #u'philippines': u'Images from Wiki Loves Monuments %s in the Philippines' % (year), 
     #u'poland': u'Images from Wiki Loves Monuments %s in Poland' % (year), 
     #u'portugal': u'Images from Wiki Loves Monuments %s in Portugal' % (year), 
