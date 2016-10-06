@@ -493,7 +493,7 @@ def main():
 
 Download 2016 metadata and make your own statistics: <a href="files-2016.txt">CSV</a> and <a href="files-2016.json">JSON</a>
 <br/><br/><b>See also:</b> <a href="stats-2015.php">2015 stats</a> (<a href="files-2015.txt">csv</a>, <a href="files-2015.json">json</a>), <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
-<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2015/Tools">many more</a>!
+<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_%s/Tools">many more</a>!
 <br/><br/>
 
 <i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
@@ -507,7 +507,7 @@ Download 2016 metadata and make your own statistics: <a href="files-2016.txt">CS
 </center>
 
 </body>
-</html>""" % (year, intro, dates_graph, hours_graph, countries_rank, resolutions_rank, sizes_rank, users_rank, datetime.datetime.now())
+</html>""" % (year, intro, dates_graph, hours_graph, countries_rank, resolutions_rank, sizes_rank, users_rank, year, datetime.datetime.now())
     with open('%s/stats-%s.php' % (path, year), 'w') as f:
         f.write(output.encode('utf-8'))
     
