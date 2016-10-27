@@ -106,7 +106,7 @@ uploadcats = {
     u'slovakia': u'Images from Wiki Loves Monuments %s in Slovakia' % (year), 
     #u'southafrica': u'Images from Wiki Loves Monuments %s in South Africa' % (year), 
     u'southkorea': u'Images from Wiki Loves Monuments %s in South Korea' % (year), 
-    u'southtyrol': u'Images from Wiki Loves Monuments %s in South Tyrol' % (year), 
+    #u'southtyrol': u'Images from Wiki Loves Monuments %s in South Tyrol' % (year), 
     u'spain': u'Images from Wiki Loves Monuments %s in Spain' % (year), 
     u'sweden': u'Images from Wiki Loves Monuments %s in Sweden' % (year), 
     #u'switzerland': u'Images from Wiki Loves Monuments %s in Switzerland' % (year), 
