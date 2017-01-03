@@ -35,7 +35,7 @@ from iwlinks join page on iwl_from=page_id join revision on page_latest = rev_id
 year = u'2016'
 path = "/data/project/wlm-stats/public_html"
 uploadcats = { 
-    #u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
+    u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
     u'algeria': u'Images from Wiki Loves Monuments %s in Algeria' % (year), 
     u'andorra': u'Images from Wiki Loves Monuments %s in Andorra' % (year), 
     u'antarctica': u'Images from Wiki Loves Monuments %s in Antarctica' % (year), 
@@ -114,7 +114,7 @@ uploadcats = {
     #u'taiwan': u'Images from Wiki Loves Monuments %s in Taiwan' % (year), 
     u'thailand': u'Images from Wiki Loves Monuments %s in Thailand' % (year), 
     u'tunisia': u'Images from Wiki Loves Monuments %s in Tunisia' % (year), 
-    u'turkey': u'Images from Wiki Loves Monuments %s in Turkey' % (year), 
+    #u'turkey': u'Images from Wiki Loves Monuments %s in Turkey' % (year), 
     u'ukraine': u'Images from Wiki Loves Monuments %s in Ukraine' % (year), 
     u'unitedkingdom': u'Images from Wiki Loves Monuments %s in the United Kingdom' % (year), 
     u'unitedstates': u'Images from Wiki Loves Monuments %s in the United States' % (year), 
