@@ -14,14 +14,14 @@
 <center>
 <table border=0 cellpadding=0px width=1000px style="text-align: center;">
 <tr>
-<td valign=middle ><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
+<td valign=middle ><img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 <td valign=top width=99%>
 <br/><big><big><big><b><a href="index.php">Wiki <i>Loves</i> Monuments</a></b></big></big></big>
 <br/><b>September 2013</b>
 <br/><br/><b>369589 files</b> by <b>11943 uploaders</b> from <b>53 countries</b> so far
 <br/><br/>Uploads <a href="#day">per day</a> and <a href="#hour">per hour</a> - Rankings for <a href="#countries">countries</a>, <a href="#uploaders">uploaders</a>, <a href="#sizes">sizes</a> and <a href="#resolutions">resolutions</a>
 </td>
-<td valign=middle><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
+<td valign=middle><img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/LUSITANA_WLM_2011_d.svg/120px-LUSITANA_WLM_2011_d.svg.png" /></td>
 </tr>
 </table>
 
@@ -149,10 +149,13 @@
 <tr><td>50</td><td>Aruba</td><td><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013 in Aruba">258</a></td><td>30</td><td>748.8</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=aruba">Details</a></td></tr>
 <tr><td>51</td><td>Luxembourg</td><td><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013 in Luxembourg">252</a></td><td>12</td><td>793.1</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=luxembourg">Details</a></td></tr>
 <tr><td>52</td><td>Antarctica</td><td><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013 in Antarctica">22</a></td><td>4</td><td>59.9</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=antarctica">Details</a></td></tr>
-<tr><td>53</td><td>Belarus</td><td><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013 in Belarus">1</a></td><td>1</td><td>3.7</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=belarus">Details</a></td></tr>
+<tr><td>53</td><td>Belarus*</td><td><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013 in Belarus">1</a></td><td>1</td><td>3.7</td><td><a href="http://toolserver.org/~superzerocool/wlm/?pais=belarus">Details</a></td></tr>
 <tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013">369589</a></b></td><td><b>11943</b></td><td><b>1287894.7</b></td><td></td></tr>
 
     </table>
+
+<p>* Belarus abandoned WLM 2013.</p>
+
 <!-- resolutions rank --><table id="resolutions" class="wikitable" style="text-align: center;">
     <tr><th>#</th><th>Resolution</th><th>Files</th><th>MBytes</th></tr>
     <tr><td>1</td><td>3264×2448</td><td>14585</td><td>38070.8</td></tr><tr><td>2</td><td>3648×2736</td><td>10730</td><td>35720.8</td></tr><tr><td>3</td><td>2448×3264</td><td>9507</td><td>24016.2</td></tr><tr><td>4</td><td>4000×3000</td><td>9469</td><td>34530.0</td></tr><tr><td>5</td><td>5184×3456</td><td>9243</td><td>73563.0</td></tr><tr><td>6</td><td>4608×3456</td><td>8015</td><td>41538.5</td></tr><tr><td>7</td><td>3264×4928</td><td>7443</td><td>54093.4</td></tr><tr><td>8</td><td>4320×3240</td><td>7364</td><td>38094.5</td></tr><tr><td>9</td><td>3072×2304</td><td>7320</td><td>16722.5</td></tr><tr><td>10</td><td>4928×3264</td><td>6975</td><td>48251.9</td></tr><tr><td>11</td><td>2592×1944</td><td>6323</td><td>12107.3</td></tr><tr><td>12</td><td>3872×2592</td><td>5832</td><td>19928.9</td></tr><tr><td>13</td><td>2048×1536</td><td>5732</td><td>6403.5</td></tr><tr><td>14</td><td>4608×3072</td><td>5519</td><td>26683.4</td></tr><tr><td>15</td><td>3456×5184</td><td>5411</td><td>43931.5</td></tr><tr><td></td><td><b>Total</b></td><td><b><a href="http://commons.wikimedia.org/wiki/Category:Images from Wiki Loves Monuments 2013">369589</a></b></td><td><b>1287894.7</b></td></tr>
