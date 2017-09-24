@@ -44,7 +44,8 @@ uploadcats = {
     u'armenia-nagorno': u'Images from Wiki Loves Monuments %s in Armenia & Nagorno-Karabakh' % (year), 
     #u'aruba': u'Images from Wiki Loves Monuments %s in Aruba' % (year), 
     u'australia': u'Images from Wiki Loves Monuments %s in Australia' % (year), 
-    u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
+    #u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
+    u'austria': u'Media from WikiDaheim %s in Austria/Cultural heritage monuments' % (year), 
     u'azerbaijan': u'Images from Wiki Loves Monuments %s in Azerbaijan' % (year), 
     u'bangladesh': u'Images from Wiki Loves Monuments %s in Bangladesh' % (year), 
     #u'belarus': u'Images from Wiki Loves Monuments %s in Belarus' % (year), 
@@ -90,7 +91,7 @@ uploadcats = {
     #u'madagascar': u'Images from Wiki Loves Monuments %s in Madagascar' % (year), 
     u'malaysia': u'Images from Wiki Loves Monuments %s in Malaysia' % (year), 
     u'malta': u'Images from Wiki Loves Monuments %s in Malta' % (year), 
-    u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
+    #u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
     u'morocco': u'Images from Wiki Loves Monuments %s in Morocco' % (year), 
     u'nepal': u'Images from Wiki Loves Monuments %s in Nepal' % (year), 
     u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
@@ -330,7 +331,7 @@ def main():
     resolutions_list = [[k, v] for v, k in resolutions_list]
 
     dates_graph_data = u', '.join([u'["%s", %s]' % (convert2unix(k), v) for k, v in dates_list])
-    dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 250px;"></div>"""
+    dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 400px;"></div>"""
     dates_graph_mini = u"""<div id="dates_graph" style="width: 300px;height: 150px;"></div>"""
     #unix timestamps are the 31 August - 1 October of current year for all (repeat)
     dates_graph_core = u"""
@@ -352,8 +353,8 @@ def main():
         var dates_graph_data_2011 = [["1504137600000", 222], ["1504224000000", 2373], ["1504310400000", 1560], ["1504396800000", 2211], ["1504483200000", 3473], ["1504569600000", 3333], ["1504656000000", 2968], ["1504742400000", 3050], ["1504828800000", 2850], ["1504915200000", 3146], ["1505001600000", 3546], ["1505088000000", 4306], ["1505174400000", 4069], ["1505260800000", 3755], ["1505347200000", 3378], ["1505433600000", 4762], ["1505520000000", 3596], ["1505606400000", 4648], ["1505692800000", 7038], ["1505779200000", 5095], ["1505865600000", 4185], ["1505952000000", 4669], ["1506038400000", 4390], ["1506124800000", 4807], ["1506211200000", 6123], ["1506297600000", 8159], ["1506384000000", 6691], ["1506470400000", 9158], ["1506556800000", 10408], ["1506643200000", 13188], ["1506729600000", 21971], ["1506816000000", 927]];
        
         var dates_graph = $("#dates_graph");
-        var dates_graph_data = [{ data: dates_graph_data_2017, label: "2017"}, { data: dates_graph_data_2016, label: "2016"}, { data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2011, label: "2011"}];
-        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2017/08/31")).getTime(), max: (new Date("2017/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 6, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
+        var dates_graph_data = [{ data: dates_graph_data_2011, label: "2011"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2016, label: "2016"}, { data: dates_graph_data_2017, label: "2017"}];
+        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2017/08/31")).getTime(), max: (new Date("2017/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 7, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
         $.plot(dates_graph, dates_graph_data, dates_graph_options);
     });
     
