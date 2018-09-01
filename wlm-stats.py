@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2012-2017 emijrp <emijrp@gmail.com>
+# Copyright (C) 2012-2018 emijrp <emijrp@gmail.com>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -32,37 +32,37 @@ select page_title,
 from iwlinks join page on iwl_from=page_id join revision on page_latest = rev_id where iwl_prefix='mw' and iwl_title='Wiki_Loves_Monuments_mobile_application' and page_namespace=6
 """
 
-year = u'2017'
+year = u'2018'
 path = "/data/project/wlm-stats/public_html"
 uploadcats = { 
-    #u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
+    u'albania': u'Images from Wiki Loves Monuments %s in Albania' % (year), 
     u'algeria': u'Images from Wiki Loves Monuments %s in Algeria' % (year), 
-    u'andorra': u'Images from Wiki Loves Monuments %s in Andorra' % (year), 
+    #u'andorra': u'Images from Wiki Loves Monuments %s in Andorra' % (year), 
     #u'antarctica': u'Images from Wiki Loves Monuments %s in Antarctica' % (year), 
     #u'argentina': u'Images from Wiki Loves Monuments %s in Argentina' % (year), 
     #u'armenia': u'Images from Wiki Loves Monuments %s in Armenia' % (year), 
-    u'armenia-nagorno': u'Images from Wiki Loves Monuments %s in Armenia & Nagorno-Karabakh' % (year), 
-    #u'aruba': u'Images from Wiki Loves Monuments %s in Aruba' % (year), 
+    #u'armenia-nagorno': u'Images from Wiki Loves Monuments %s in Armenia & Nagorno-Karabakh' % (year), 
+    u'aruba': u'Images from Wiki Loves Monuments %s in Aruba' % (year), 
     u'australia': u'Images from Wiki Loves Monuments %s in Australia' % (year), 
-    #u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
-    u'austria': u'Media from WikiDaheim %s in Austria/Cultural heritage monuments' % (year), 
+    u'austria': u'Images from Wiki Loves Monuments %s in Austria' % (year), 
+    #u'austria': u'Media from WikiDaheim %s in Austria/Cultural heritage monuments' % (year), 
     u'azerbaijan': u'Images from Wiki Loves Monuments %s in Azerbaijan' % (year), 
     u'bangladesh': u'Images from Wiki Loves Monuments %s in Bangladesh' % (year), 
     #u'belarus': u'Images from Wiki Loves Monuments %s in Belarus' % (year), 
     #u'belgium': u'Images from Wiki Loves Monuments %s in Belgium' % (year), 
-    #u'bolivia': u'Images from Wiki Loves Monuments %s in Bolivia' % (year), 
-    u'brazil': u'Images from Wiki Loves Monuments %s in Brazil' % (year), 
-    u'bulgaria': u'Images from Wiki Loves Monuments %s in Bulgaria' % (year), 
+    u'bolivia': u'Images from Wiki Loves Monuments %s in Bolivia' % (year), 
+    #u'brazil': u'Images from Wiki Loves Monuments %s in Brazil' % (year), 
+    #u'bulgaria': u'Images from Wiki Loves Monuments %s in Bulgaria' % (year), 
     #u'cambodia': u'Images from Wiki Loves Monuments %s in Cambodia' % (year), 
     #u'cameroon': u'Images from Wiki Loves Monuments %s in Cameroon' % (year), 
-    u'canada': u'Images from Wiki Loves Monuments %s in Canada' % (year), 
+    #u'canada': u'Images from Wiki Loves Monuments %s in Canada' % (year), 
     #u'chile': u'Images from Wiki Loves Monuments %s in Chile' % (year), 
-    u'china': u'Images from Wiki Loves Monuments %s in China' % (year), 
+    #u'china': u'Images from Wiki Loves Monuments %s in China' % (year), 
     #u'colombia': u'Images from Wiki Loves Monuments %s in Colombia' % (year), 
     u'croatia': u'Images from Wiki Loves Monuments %s in Croatia' % (year), 
     #u'czechrepublic': u'Images from Wiki Loves Monuments %s in the Czech Republic' % (year), 
     #u'denmark': u'Images from Wiki Loves Monuments %s in Denmark' % (year), 
-    u'dutch-caribbean': u'Images from Wiki Loves Monuments %s in the Dutch Caribbean' % (year), 
+    #u'dutch-caribbean': u'Images from Wiki Loves Monuments %s in the Dutch Caribbean' % (year), 
     u'egypt': u'Images from Wiki Loves Monuments %s in Egypt' % (year), 
     #u'elsalvador': u'Images from Wiki Loves Monuments %s in El Salvador' % (year), 
     #u'estonia': u'Images from Wiki Loves Monuments %s in Estonia' % (year), 
@@ -70,7 +70,7 @@ uploadcats = {
     u'france': u'Images from Wiki Loves Monuments %s in France' % (year), 
     u'georgia': u'Images from Wiki Loves Monuments %s in Georgia' % (year), 
     u'germany': u'Images from Wiki Loves Monuments %s in Germany' % (year), 
-    u'ghana': u'Images from Wiki Loves Monuments %s in Ghana' % (year), 
+    #u'ghana': u'Images from Wiki Loves Monuments %s in Ghana' % (year), 
     u'greece': u'Images from Wiki Loves Monuments %s in Greece' % (year), 
     #u'hongkong': u'Images from Wiki Loves Monuments %s in Hong Kong' % (year), 
     #u'hungary': u'Images from Wiki Loves Monuments %s in Hungary' % (year), 
@@ -82,7 +82,7 @@ uploadcats = {
     u'italy': u'Images from Wiki Loves Monuments %s in Italy' % (year), 
     u'jordan': u'Images from Wiki Loves Monuments %s in Jordan' % (year), 
     #u'kenya': u'Images from Wiki Loves Monuments %s in Kenya' % (year), 
-    #u'kosovo': u'Images from Wiki Loves Monuments %s in Kosovo' % (year), 
+    u'kosovo': u'Images from Wiki Loves Monuments %s in Kosovo' % (year), 
     u'latvia': u'Images from Wiki Loves Monuments %s in Latvia' % (year), 
     u'lebanon': u'Images from Wiki Loves Monuments %s in Lebanon' % (year), 
     #u'liechtenstein': u'Images from Wiki Loves Monuments %s in Liechtenstein' % (year), 
@@ -94,28 +94,28 @@ uploadcats = {
     #u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
     u'morocco': u'Images from Wiki Loves Monuments %s in Morocco' % (year), 
     u'nepal': u'Images from Wiki Loves Monuments %s in Nepal' % (year), 
-    u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
+    #u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
     u'nigeria': u'Images from Wiki Loves Monuments %s in Nigeria' % (year), 
     u'norway': u'Images from Wiki Loves Monuments %s in Norway' % (year), 
     u'pakistan': u'Images from Wiki Loves Monuments %s in Pakistan' % (year), 
     u'palestine': u'Images from Wiki Loves Monuments %s in Palestine' % (year), 
     #u'panama': u'Images from Wiki Loves Monuments %s in Panama' % (year), 
     u'peru': u'Images from Wiki Loves Monuments %s in Peru' % (year), 
-    #u'philippines': u'Images from Wiki Loves Monuments %s in the Philippines' % (year), 
+    u'philippines': u'Images from Wiki Loves Monuments %s in the Philippines' % (year), 
     u'poland': u'Images from Wiki Loves Monuments %s in Poland' % (year), 
-    #u'portugal': u'Images from Wiki Loves Monuments %s in Portugal' % (year), 
+    u'portugal': u'Images from Wiki Loves Monuments %s in Portugal' % (year), 
     #u'qatar': u'Images from Wiki Loves Monuments %s in Qatar' % (year), 
-    #u'romania': u'Images from Wiki Loves Monuments %s in Romania' % (year), 
+    u'romania': u'Images from Wiki Loves Monuments %s in Romania' % (year), 
     u'russia': u'Images from Wiki Loves Monuments %s in Russia' % (year), 
-    u'saudiarabia': u'Images from Wiki Loves Monuments %s in Saudi Arabia' % (year), 
+    #u'saudiarabia': u'Images from Wiki Loves Monuments %s in Saudi Arabia' % (year), 
     #u'serbia': u'Images from Wiki Loves Monuments %s in Serbia' % (year), 
-    u'slovakia': u'Images from Wiki Loves Monuments %s in Slovakia' % (year), 
+    #u'slovakia': u'Images from Wiki Loves Monuments %s in Slovakia' % (year), 
     #u'southafrica': u'Images from Wiki Loves Monuments %s in South Africa' % (year), 
-    u'southkorea': u'Images from Wiki Loves Monuments %s in South Korea' % (year), 
+    #u'southkorea': u'Images from Wiki Loves Monuments %s in South Korea' % (year), 
     #u'southtyrol': u'Images from Wiki Loves Monuments %s in South Tyrol' % (year), 
     u'spain': u'Images from Wiki Loves Monuments %s in Spain' % (year), 
     u'sweden': u'Images from Wiki Loves Monuments %s in Sweden' % (year), 
-    #u'switzerland': u'Images from Wiki Loves Monuments %s in Switzerland' % (year), 
+    u'switzerland': u'Images from Wiki Loves Monuments %s in Switzerland' % (year), 
     u'syria': u'Images from Wiki Loves Monuments %s in Syria' % (year), 
     u'taiwan': u'Images from Wiki Loves Monuments %s in Taiwan' % (year), 
     u'thailand': u'Images from Wiki Loves Monuments %s in Thailand' % (year), 
@@ -123,10 +123,11 @@ uploadcats = {
     #u'turkey': u'Images from Wiki Loves Monuments %s in Turkey' % (year), 
     u'uganda': u'Images from Wiki Loves Monuments %s in Uganda' % (year), 
     u'ukraine': u'Images from Wiki Loves Monuments %s in Ukraine' % (year), 
+    u'unitedarabemirates': u'Images from Wiki Loves Monuments %s in the United Arab Emirates' % (year), 
     u'unitedkingdom': u'Images from Wiki Loves Monuments %s in the United Kingdom' % (year), 
     u'unitedstates': u'Images from Wiki Loves Monuments %s in the United States' % (year), 
     #u'uruguay': u'Images from Wiki Loves Monuments %s in Uruguay' % (year), 
-    u'venezuela': u'Images from Wiki Loves Monuments %s in Venezuela' % (year), 
+    #u'venezuela': u'Images from Wiki Loves Monuments %s in Venezuela' % (year), 
 }
 
 countrynames = { 
@@ -217,6 +218,7 @@ countrynames = {
     u'turkey': u'Turkey', 
     u'uganda': u'Uganda', 
     u'ukraine': u'Ukraine', 
+    u'unitedarabemirates': u'United Arab Emirates', 
     u'unitedkingdom': u'United Kingdom', 
     u'unitedstates': u'United States', 
     u'uruguay': u'Uruguay', 
@@ -337,24 +339,28 @@ def main():
     dates_graph_core = u"""
     <script type="text/javascript">
     $(function () {
-        var dates_graph_data_2017 = [%s];
+        var ts = 1535673600000; // 00:00 Aug 31st of present year
+        var tsday = 86400*1000; // do not change
         
-        var dates_graph_data_2016 = [["1504137600000", 366], ["1504224000000", 5179], ["1504310400000", 8836], ["1504396800000", 8759], ["1504483200000", 8689], ["1504569600000", 5316], ["1504656000000", 5562], ["1504742400000", 5160], ["1504828800000", 6187], ["1504915200000", 6455], ["1505001600000", 6645], ["1505088000000", 5753], ["1505174400000", 5503], ["1505260800000", 4613], ["1505347200000", 4643], ["1505433600000", 6142], ["1505520000000", 6058], ["1505606400000", 5742], ["1505692800000", 8285], ["1505779200000", 6186], ["1505865600000", 7978], ["1505952000000", 6818], ["1506038400000", 6751], ["1506124800000", 7343], ["1506211200000", 7475], ["1506297600000", 9397], ["1506384000000", 11575], ["1506470400000", 12276], ["1506556800000", 13934], ["1506643200000", 23664], ["1506729600000", 32493], ["1506816000000", 2613]];
+        var dates_graph_data_2018 = [%s];
         
+        var dates_graph_data_2017 = [[(ts+tsday*0).toString(), 320], [(ts+tsday*1).toString(), 7997], [(ts+tsday*2).toString(), 7311], [(ts+tsday*3).toString(), 9812], [(ts+tsday*4).toString(), 6567], [(ts+tsday*5).toString(), 5309], [(ts+tsday*6).toString(), 4490], [(ts+tsday*7).toString(), 5072], [(ts+tsday*8).toString(), 5333], [(ts+tsday*9).toString(), 4374], [(ts+tsday*10).toString(), 4704], [(ts+tsday*11).toString(), 6496], [(ts+tsday*12).toString(), 6707], [(ts+tsday*13).toString(), 5188], [(ts+tsday*14).toString(), 5003], [(ts+tsday*15).toString(), 3321], [(ts+tsday*16).toString(), 4301], [(ts+tsday*17).toString(), 6150], [(ts+tsday*18).toString(), 5646], [(ts+tsday*19).toString(), 5107], [(ts+tsday*20).toString(), 6426], [(ts+tsday*21).toString(), 6173], [(ts+tsday*22).toString(), 6701], [(ts+tsday*23).toString(), 7583], [(ts+tsday*24).toString(), 8528], [(ts+tsday*25).toString(), 10456], [(ts+tsday*26).toString(), 8301], [(ts+tsday*27).toString(), 10505], [(ts+tsday*28).toString(), 14117], [(ts+tsday*29).toString(), 20442], [(ts+tsday*30).toString(), 27511], [(ts+tsday*31).toString(), 1619]];
         
-        var dates_graph_data_2015 = [["1504137600000", 852], ["1504224000000", 6981], ["1504310400000", 6028], ["1504396800000", 6519], ["1504483200000", 7189], ["1504569600000", 5689], ["1504656000000", 6726], ["1504742400000", 4823], ["1504828800000", 3824], ["1504915200000", 4276], ["1505001600000", 3521], ["1505088000000", 4177], ["1505174400000", 5003], ["1505260800000", 6793], ["1505347200000", 4989], ["1505433600000", 5869], ["1505520000000", 4800], ["1505606400000", 4802], ["1505692800000", 4393], ["1505779200000", 5661], ["1505865600000", 7025], ["1505952000000", 8293], ["1506038400000", 7860], ["1506124800000", 6899], ["1506211200000", 7749], ["1506297600000", 6534], ["1506384000000", 7894], ["1506470400000", 10949], ["1506556800000", 14017], ["1506643200000", 15320], ["1506729600000", 22803], ["1506816000000", 825]];
+        var dates_graph_data_2016 = [[(ts+tsday*0).toString(), 366], [(ts+tsday*1).toString(), 5179], [(ts+tsday*2).toString(), 8836], [(ts+tsday*3).toString(), 8759], [(ts+tsday*4).toString(), 8689], [(ts+tsday*5).toString(), 5316], [(ts+tsday*6).toString(), 5562], [(ts+tsday*7).toString(), 5160], [(ts+tsday*8).toString(), 6187], [(ts+tsday*9).toString(), 6455], [(ts+tsday*10).toString(), 6645], [(ts+tsday*11).toString(), 5753], [(ts+tsday*12).toString(), 5503], [(ts+tsday*13).toString(), 4613], [(ts+tsday*14).toString(), 4643], [(ts+tsday*15).toString(), 6142], [(ts+tsday*16).toString(), 6058], [(ts+tsday*17).toString(), 5742], [(ts+tsday*18).toString(), 8285], [(ts+tsday*19).toString(), 6186], [(ts+tsday*20).toString(), 7978], [(ts+tsday*21).toString(), 6818], [(ts+tsday*22).toString(), 6751], [(ts+tsday*23).toString(), 7343], [(ts+tsday*24).toString(), 7475], [(ts+tsday*25).toString(), 9397], [(ts+tsday*26).toString(), 11575], [(ts+tsday*27).toString(), 12276], [(ts+tsday*28).toString(), 13934], [(ts+tsday*29).toString(), 23664], [(ts+tsday*30).toString(), 32493], [(ts+tsday*31).toString(), 2613]];
         
-        var dates_graph_data_2014 = [["1504137600000", 837], ["1504224000000", 10066], ["1504310400000", 6531], ["1504396800000", 6595], ["1504483200000", 5285], ["1504569600000", 5430], ["1504656000000", 6534], ["1504742400000", 6925], ["1504828800000", 5187], ["1504915200000", 4659], ["1505001600000", 5070], ["1505088000000", 4157], ["1505174400000", 5416], ["1505260800000", 5198], ["1505347200000", 6586], ["1505433600000", 6604], ["1505520000000", 7280], ["1505606400000", 7816], ["1505692800000", 5855], ["1505779200000", 5128], ["1505865600000", 6786], ["1505952000000", 7939], ["1506038400000", 7570], ["1506124800000", 7779], ["1506211200000", 6979], ["1506297600000", 8705], ["1506384000000", 9844], ["1506470400000", 10181], ["1506556800000", 12936], ["1506643200000", 16419], ["1506729600000", 24490], ["1506816000000", 2690]];
+        var dates_graph_data_2015 = [[(ts+tsday*0).toString(), 852], [(ts+tsday*1).toString(), 6981], [(ts+tsday*2).toString(), 6028], [(ts+tsday*3).toString(), 6519], [(ts+tsday*4).toString(), 7189], [(ts+tsday*5).toString(), 5689], [(ts+tsday*6).toString(), 6726], [(ts+tsday*7).toString(), 4823], [(ts+tsday*8).toString(), 3824], [(ts+tsday*9).toString(), 4276], [(ts+tsday*10).toString(), 3521], [(ts+tsday*11).toString(), 4177], [(ts+tsday*12).toString(), 5003], [(ts+tsday*13).toString(), 6793], [(ts+tsday*14).toString(), 4989], [(ts+tsday*15).toString(), 5869], [(ts+tsday*16).toString(), 4800], [(ts+tsday*17).toString(), 4802], [(ts+tsday*18).toString(), 4393], [(ts+tsday*19).toString(), 5661], [(ts+tsday*20).toString(), 7025], [(ts+tsday*21).toString(), 8293], [(ts+tsday*22).toString(), 7860], [(ts+tsday*23).toString(), 6899], [(ts+tsday*24).toString(), 7749], [(ts+tsday*25).toString(), 6534], [(ts+tsday*26).toString(), 7894], [(ts+tsday*27).toString(), 10949], [(ts+tsday*28).toString(), 14017], [(ts+tsday*29).toString(), 15320], [(ts+tsday*30).toString(), 22803], [(ts+tsday*31).toString(), 825]];
         
-        var dates_graph_data_2013 = [["1504137600000", 409], ["1504224000000", 14345], ["1504310400000", 8265], ["1504396800000", 9208], ["1504483200000", 8663], ["1504569600000", 7886], ["1504656000000", 8220], ["1504742400000", 8453], ["1504828800000", 9373], ["1504915200000", 9606], ["1505001600000", 8279], ["1505088000000", 9629], ["1505174400000", 7791], ["1505260800000", 8388], ["1505347200000", 8160], ["1505433600000", 9568], ["1505520000000", 8790], ["1505606400000", 9468], ["1505692800000", 8790], ["1505779200000", 8381], ["1505865600000", 8992], ["1505952000000", 10009], ["1506038400000", 12367], ["1506124800000", 9869], ["1506211200000", 13156], ["1506297600000", 14209], ["1506384000000", 15964], ["1506470400000", 15085], ["1506556800000", 19514], ["1506643200000", 33069], ["1506729600000", 41951], ["1506816000000", 3711]];
+        var dates_graph_data_2014 = [[(ts+tsday*0).toString(), 837], [(ts+tsday*1).toString(), 10066], [(ts+tsday*2).toString(), 6531], [(ts+tsday*3).toString(), 6595], [(ts+tsday*4).toString(), 5285], [(ts+tsday*5).toString(), 5430], [(ts+tsday*6).toString(), 6534], [(ts+tsday*7).toString(), 6925], [(ts+tsday*8).toString(), 5187], [(ts+tsday*9).toString(), 4659], [(ts+tsday*10).toString(), 5070], [(ts+tsday*11).toString(), 4157], [(ts+tsday*12).toString(), 5416], [(ts+tsday*13).toString(), 5198], [(ts+tsday*14).toString(), 6586], [(ts+tsday*15).toString(), 6604], [(ts+tsday*16).toString(), 7280], [(ts+tsday*17).toString(), 7816], [(ts+tsday*18).toString(), 5855], [(ts+tsday*19).toString(), 5128], [(ts+tsday*20).toString(), 6786], [(ts+tsday*21).toString(), 7939], [(ts+tsday*22).toString(), 7570], [(ts+tsday*23).toString(), 7779], [(ts+tsday*24).toString(), 6979], [(ts+tsday*25).toString(), 8705], [(ts+tsday*26).toString(), 9844], [(ts+tsday*27).toString(), 10181], [(ts+tsday*28).toString(), 12936], [(ts+tsday*29).toString(), 16419], [(ts+tsday*30).toString(), 24490], [(ts+tsday*31).toString(), 2690]];
+        
+        var dates_graph_data_2013 = [[(ts+tsday*0).toString(), 409], [(ts+tsday*1).toString(), 14345], [(ts+tsday*2).toString(), 8265], [(ts+tsday*3).toString(), 9208], [(ts+tsday*4).toString(), 8663], [(ts+tsday*5).toString(), 7886], [(ts+tsday*6).toString(), 8220], [(ts+tsday*7).toString(), 8453], [(ts+tsday*8).toString(), 9373], [(ts+tsday*9).toString(), 9606], [(ts+tsday*10).toString(), 8279], [(ts+tsday*11).toString(), 9629], [(ts+tsday*12).toString(), 7791], [(ts+tsday*13).toString(), 8388], [(ts+tsday*14).toString(), 8160], [(ts+tsday*15).toString(), 9568], [(ts+tsday*16).toString(), 8790], [(ts+tsday*17).toString(), 9468], [(ts+tsday*18).toString(), 8790], [(ts+tsday*19).toString(), 8381], [(ts+tsday*20).toString(), 8992], [(ts+tsday*21).toString(), 10009], [(ts+tsday*22).toString(), 12367], [(ts+tsday*23).toString(), 9869], [(ts+tsday*24).toString(), 13156], [(ts+tsday*25).toString(), 14209], [(ts+tsday*26).toString(), 15964], [(ts+tsday*27).toString(), 15085], [(ts+tsday*28).toString(), 19514], [(ts+tsday*29).toString(), 33069], [(ts+tsday*30).toString(), 41951], [(ts+tsday*31).toString(), 3711]];
 
-        var dates_graph_data_2012 = [["1504137600000", 525], ["1504224000000", 7641], ["1504310400000", 8638], ["1504396800000", 6954], ["1504483200000", 7276], ["1504569600000", 7946], ["1504656000000", 6513], ["1504742400000", 7268], ["1504828800000", 8386], ["1504915200000", 10372], ["1505001600000", 10613], ["1505088000000", 8214], ["1505174400000", 8694], ["1505260800000", 9046], ["1505347200000", 8725], ["1505433600000", 8627], ["1505520000000", 11119], ["1505606400000", 9520], ["1505692800000", 8408], ["1505779200000", 7387], ["1505865600000", 8284], ["1505952000000", 10391], ["1506038400000", 10656], ["1506124800000", 14308], ["1506211200000", 11642], ["1506297600000", 12848], ["1506384000000", 13158], ["1506470400000", 17252], ["1506556800000", 20409], ["1506643200000", 26966], ["1506729600000", 47387], ["1506816000000", 5554]];
+        var dates_graph_data_2012 = [[(ts+tsday*0).toString(), 525], [(ts+tsday*1).toString(), 7641], [(ts+tsday*2).toString(), 8638], [(ts+tsday*3).toString(), 6954], [(ts+tsday*4).toString(), 7276], [(ts+tsday*5).toString(), 7946], [(ts+tsday*6).toString(), 6513], [(ts+tsday*7).toString(), 7268], [(ts+tsday*8).toString(), 8386], [(ts+tsday*9).toString(), 10372], [(ts+tsday*10).toString(), 10613], [(ts+tsday*11).toString(), 8214], [(ts+tsday*12).toString(), 8694], [(ts+tsday*13).toString(), 9046], [(ts+tsday*14).toString(), 8725], [(ts+tsday*15).toString(), 8627], [(ts+tsday*16).toString(), 11119], [(ts+tsday*17).toString(), 9520], [(ts+tsday*18).toString(), 8408], [(ts+tsday*19).toString(), 7387], [(ts+tsday*20).toString(), 8284], [(ts+tsday*21).toString(), 10391], [(ts+tsday*22).toString(), 10656], [(ts+tsday*23).toString(), 14308], [(ts+tsday*24).toString(), 11642], [(ts+tsday*25).toString(), 12848], [(ts+tsday*26).toString(), 13158], [(ts+tsday*27).toString(), 17252], [(ts+tsday*28).toString(), 20409], [(ts+tsday*29).toString(), 26966], [(ts+tsday*30).toString(), 47387], [(ts+tsday*31).toString(), 5554]];
 
-        var dates_graph_data_2011 = [["1504137600000", 222], ["1504224000000", 2373], ["1504310400000", 1560], ["1504396800000", 2211], ["1504483200000", 3473], ["1504569600000", 3333], ["1504656000000", 2968], ["1504742400000", 3050], ["1504828800000", 2850], ["1504915200000", 3146], ["1505001600000", 3546], ["1505088000000", 4306], ["1505174400000", 4069], ["1505260800000", 3755], ["1505347200000", 3378], ["1505433600000", 4762], ["1505520000000", 3596], ["1505606400000", 4648], ["1505692800000", 7038], ["1505779200000", 5095], ["1505865600000", 4185], ["1505952000000", 4669], ["1506038400000", 4390], ["1506124800000", 4807], ["1506211200000", 6123], ["1506297600000", 8159], ["1506384000000", 6691], ["1506470400000", 9158], ["1506556800000", 10408], ["1506643200000", 13188], ["1506729600000", 21971], ["1506816000000", 927]];
+        var dates_graph_data_2011 = [[(ts+tsday*0).toString(), 222], [(ts+tsday*1).toString(), 2373], [(ts+tsday*2).toString(), 1560], [(ts+tsday*3).toString(), 2211], [(ts+tsday*4).toString(), 3473], [(ts+tsday*5).toString(), 3333], [(ts+tsday*6).toString(), 2968], [(ts+tsday*7).toString(), 3050], [(ts+tsday*8).toString(), 2850], [(ts+tsday*9).toString(), 3146], [(ts+tsday*10).toString(), 3546], [(ts+tsday*11).toString(), 4306], [(ts+tsday*12).toString(), 4069], [(ts+tsday*13).toString(), 3755], [(ts+tsday*14).toString(), 3378], [(ts+tsday*15).toString(), 4762], [(ts+tsday*16).toString(), 3596], [(ts+tsday*17).toString(), 4648], [(ts+tsday*18).toString(), 7038], [(ts+tsday*19).toString(), 5095], [(ts+tsday*20).toString(), 4185], [(ts+tsday*21).toString(), 4669], [(ts+tsday*22).toString(), 4390], [(ts+tsday*23).toString(), 4807], [(ts+tsday*24).toString(), 6123], [(ts+tsday*25).toString(), 8159], [(ts+tsday*26).toString(), 6691], [(ts+tsday*27).toString(), 9158], [(ts+tsday*28).toString(), 10408], [(ts+tsday*29).toString(), 13188], [(ts+tsday*30).toString(), 21971], [(ts+tsday*31).toString(), 927]];
        
         var dates_graph = $("#dates_graph");
-        var dates_graph_data = [{ data: dates_graph_data_2011, label: "2011"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2016, label: "2016"}, { data: dates_graph_data_2017, label: "2017"}];
-        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2017/08/31")).getTime(), max: (new Date("2017/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 7, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
+        var dates_graph_data = [{ data: dates_graph_data_2011, label: "2011"}, { data: dates_graph_data_2012, label: "2012"}, { data: dates_graph_data_2013, label: "2013"}, { data: dates_graph_data_2014, label: "2014"}, { data: dates_graph_data_2015, label: "2015"}, { data: dates_graph_data_2016, label: "2016"}, { data: dates_graph_data_2017, label: "2017"}, { data: dates_graph_data_2018, label: "2018"}];
+        var dates_graph_options = { xaxis: { mode: "time", min: (new Date("2018/08/31")).getTime(), max: (new Date("2018/10/01")).getTime() }, lines: { show: true }, points: { show: true }, legend: { noColumns: 8, position: "nw" }, grid: { hoverable: true }, clickable: true, hoverable: true };
         $.plot(dates_graph, dates_graph_data, dates_graph_options);
     });
     
@@ -507,14 +513,14 @@ def main():
 </tr>
 </table>
 
-Download 2017 metadata and make your own statistics: <a href="files-2017.txt">CSV</a> and <a href="files-2017.json">JSON</a>
-<br/><br/><b>See also:</b> <a href="stats-2016.php">2016 stats</a> (<a href="files-2016.txt">csv</a>, <a href="files-2016.json">json</a>), <a href="stats-2015.php">2015 stats</a> (<a href="files-2015.txt">csv</a>, <a href="files-2015.json">json</a>), <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)
-<br/><br/><b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_%s/Tools">many more</a>!
+Download 2018 metadata and make your own statistics: <a href="files-2018.txt">CSV</a> and <a href="files-2018.json">JSON</a><br/><br/>
+
+<b>See also:</b> <a href="stats-2017.php">2017 stats</a> (<a href="files-2017.txt">csv</a>, <a href="files-2017.json">json</a>), <a href="stats-2016.php">2016 stats</a> (<a href="files-2016.txt">csv</a>, <a href="files-2016.json">json</a>), <a href="stats-2015.php">2015 stats</a> (<a href="files-2015.txt">csv</a>, <a href="files-2015.json">json</a>), <a href="stats-2014.php">2014 stats</a> (<a href="files-2014.txt">csv</a>, <a href="files-2014.json">json</a>), <a href="stats-2013.php">2013 stats</a> (<a href="files-2013.txt">csv</a>), <a href="stats-2012.php">2012 stats</a> (<a href="files-2012.txt">csv</a>) and <a href="stats-2011.php">2011 stats</a> (<a href="files-2011.txt">csv</a>)<br/><br/>
+
+<b>Other statistics:</b> <a href="http://stats.wikilovesmonuments.cl/?pais=">country details</a> (Superzerocool), <a href="http://www.geobib.fr/mh/stats/">cumulative</a> (Sylvain), <a href="http://wikizabytki.pl/stats/">country race</a> (Yarl) and <a href="//commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_%s/Tools">many more</a>!
 <br/><br/>
 
-<i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i>
-
-<br/><br/>
+<i><b>Last update:</b> %s (UTC). Developed by <a href="https://en.wikipedia.org/wiki/User:Emijrp">emijrp</a> using <a href="http://www.flotcharts.org">flot</a>. <a href="https://github.com/emijrp/wlm-stats">Source code</a> is GPL.</i><br/><br/>
 
 <a href="//tools.wmflabs.org/wlm-maps/"><img src="//upload.wikimedia.org/wikipedia/commons/thumb/9/93/Wiki_Loves_Monuments_2015_-_2015-09-01.png/640px-Wiki_Loves_Monuments_2015_-_2015-09-01.png" title="Check the map!" /></a>
 
