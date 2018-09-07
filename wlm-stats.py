@@ -51,17 +51,17 @@ uploadcats = {
     #u'belarus': u'Images from Wiki Loves Monuments %s in Belarus' % (year), 
     #u'belgium': u'Images from Wiki Loves Monuments %s in Belgium' % (year), 
     u'bolivia': u'Images from Wiki Loves Monuments %s in Bolivia' % (year), 
-    #u'brazil': u'Images from Wiki Loves Monuments %s in Brazil' % (year), 
+    u'brazil': u'Images from Wiki Loves Monuments %s in Brazil' % (year), 
     #u'bulgaria': u'Images from Wiki Loves Monuments %s in Bulgaria' % (year), 
     #u'cambodia': u'Images from Wiki Loves Monuments %s in Cambodia' % (year), 
     #u'cameroon': u'Images from Wiki Loves Monuments %s in Cameroon' % (year), 
-    #u'canada': u'Images from Wiki Loves Monuments %s in Canada' % (year), 
+    u'canada': u'Images from Wiki Loves Monuments %s in Canada' % (year), 
     #u'chile': u'Images from Wiki Loves Monuments %s in Chile' % (year), 
     #u'china': u'Images from Wiki Loves Monuments %s in China' % (year), 
     #u'colombia': u'Images from Wiki Loves Monuments %s in Colombia' % (year), 
     u'croatia': u'Images from Wiki Loves Monuments %s in Croatia' % (year), 
     #u'czechrepublic': u'Images from Wiki Loves Monuments %s in the Czech Republic' % (year), 
-    #u'denmark': u'Images from Wiki Loves Monuments %s in Denmark' % (year), 
+    u'denmark': u'Images from Wiki Loves Monuments %s in Denmark' % (year), 
     #u'dutch-caribbean': u'Images from Wiki Loves Monuments %s in the Dutch Caribbean' % (year), 
     u'egypt': u'Images from Wiki Loves Monuments %s in Egypt' % (year), 
     #u'elsalvador': u'Images from Wiki Loves Monuments %s in El Salvador' % (year), 
@@ -91,7 +91,7 @@ uploadcats = {
     #u'madagascar': u'Images from Wiki Loves Monuments %s in Madagascar' % (year), 
     u'malaysia': u'Images from Wiki Loves Monuments %s in Malaysia' % (year), 
     u'malta': u'Images from Wiki Loves Monuments %s in Malta' % (year), 
-    #u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
+    u'mexico': u'Images from Wiki Loves Monuments %s in Mexico' % (year), 
     u'morocco': u'Images from Wiki Loves Monuments %s in Morocco' % (year), 
     u'nepal': u'Images from Wiki Loves Monuments %s in Nepal' % (year), 
     #u'netherlands': u'Images from Wiki Loves Monuments %s in the Netherlands' % (year), 
@@ -333,7 +333,7 @@ def main():
     resolutions_list = [[k, v] for v, k in resolutions_list]
 
     dates_graph_data = u', '.join([u'["%s", %s]' % (convert2unix(k), v) for k, v in dates_list])
-    dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 400px;"></div>"""
+    dates_graph = u"""<div id="dates_graph" style="width: 1000px;height: 500px;"></div>"""
     dates_graph_mini = u"""<div id="dates_graph" style="width: 300px;height: 150px;"></div>"""
     #unix timestamps are the 31 August - 1 October of current year for all (repeat)
     dates_graph_core = u"""
